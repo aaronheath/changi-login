@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
+// import {HttpModule} from "@angular/http";
+import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -13,9 +15,12 @@ import {HttpModule} from "@angular/http";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
+    HttpClientXsrfModule,
   ],
-  providers: [],
+  providers: [
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,24 @@
+.wrapper {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#input-email {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#input-password {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-check-label {
+  margin: 10px 0;
+}
+
+.invalid-feedback {
+  display: block;
+}

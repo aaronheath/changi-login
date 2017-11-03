@@ -1,5 +1,17 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
-  <input type="text" placeholder="Email" formControlName="email">
-  <input type="password" placeholder="Password" formControlName="password">
-  <button>Login</button>
-</form>
+<div class="container">
+  <div class="wrapper">
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+      <input type="text" id="input-email" formControlName="email" class="form-control" placeholder="Email">
+      <input type="password" id="input-password" formControlName="password" class="form-control" placeholder="Password">
+        <label class="form-check-label">
+          <input type="checkbox" formControlName="remember_email" class="form-check-input"> Remember Email
+        </label>
+      <button class="btn btn-primary btn-block" [disabled]="disableSubmitBtn()">Login</button>
+      <div class="invalid-feedback" *ngIf="feedback">{{ feedback }}</div>
+    </form>
+  </div>
+</div>
+
+
+
+
