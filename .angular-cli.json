@@ -59,6 +59,9 @@
     "class": {
       "spec": false
     },
-    "component": {}
+    "component": {},
+    "serve": {
+      "host": "login.ahio.wip"
+    }
   }
 }

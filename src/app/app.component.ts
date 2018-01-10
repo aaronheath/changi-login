@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import 'rxjs/add/operator/map';
 import {AuthService} from './services/auth.service';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
     this.restoreStoredEmail();
   }
 
-  onSubmit(event) {
+  onSubmit(event): void {
     event.preventDefault();
 
     this.inProgress = true;
@@ -43,15 +44,15 @@ export class AppComponent implements OnInit {
     });
   }
 
-  invalidForm() {
+  invalidForm(): boolean {
     return this.form.invalid;
   }
 
-  disableSubmitBtn() {
+  disableSubmitBtn(): boolean {
     return this.invalidForm() || this.inProgress;
   }
 
-  private storeEmail(remember) {
+  private storeEmail(remember): void {
     if(remember) {
       localStorage.setItem('email', this.form.value.email);
     } else {
@@ -59,7 +60,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  private restoreStoredEmail() {
+  private restoreStoredEmail(): void {
     const email = localStorage.getItem('email');
 
     if(email) {
@@ -67,7 +68,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  private redirect() {
-    console.log('Login successful.');
+  private redirect(): void {
+    console.log('Logged In!');
+    window.location.href = `https://${environment.adminPortalUrl}`;
   }
 }

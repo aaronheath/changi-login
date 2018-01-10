@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'api.ahdc.dev',
+  apiUrl: 'api.ahdc.wip',
+  adminPortalUrl: 'admin.ahio.wip',
 };
